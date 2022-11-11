@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+<body>
+    <form action="/cart" method="POST">
+        <!-- <button type="submit">Cart <%= totalNumberOfFoods %></button> -->
+        <button type="submit">Cart</button>
+    </form>
+    <% foodList.forEach(currentFood => { %>
+        <% let FoodType = "Non-Veg" %>
+        <% if(currentFood.type == 0) FoodType="Veg" %>
+        <ul>
+            <li><label>Name: </label><label><%= currentFood.name %></label></li>
+            <li><label>Price: </label><label><%= currentFood.price %></label></li>
+            <li><label>Type: </label><label><%= FoodType %></label></li>
+        </ul>
+        <!-- <a href="#" class="add-to-cart">Add to cart</a> -->
+        <form action="/add-to-cart" method="POST">
+            <button type="submit">Add to Cart</button>
+            <input type="number" name="quantity" min="1" value="0" style="width: 30px;"></input>
+            <input name="name" value=<%=currentFood.name%> style="display: none"></input>
+        </form>
+
+    <% }); %>
+</body>
+</html>

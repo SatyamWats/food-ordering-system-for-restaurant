@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><%= errorMessage %></p>
+    <% cartList.forEach(currentCartItem => { %>
+        <ul>
+            <li><label>Name: </label><label><%= currentCartItem.name %></label></li>
+            <li><label>Quantity: </label><label><%= currentCartItem.quantity %></label></li>
+        </ul>
+    <% }); %>
+    <form action="/checkout" method="post">
+        <button type="submit">Checkout</button>
+    </form>
+</body>
+</html>
