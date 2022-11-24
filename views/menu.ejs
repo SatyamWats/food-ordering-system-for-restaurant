@@ -4,28 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Oriya&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/menu.css">
     <title>Menu</title>
 </head>
 <body>
+    <!-- <span>header</span> -->
     <form action="/cart" method="POST">
         <!-- <button type="submit">Cart <%= totalNumberOfFoods %></button> -->
-        <button type="submit">Cart</button>
+        <span><button class="btn" type="submit" id="cart">Cart</button></span>
     </form>
-    <% foodList.forEach(currentFood => { %>
-        <% let FoodType = "Non-Veg" %>
-        <% if(currentFood.type == 0) FoodType="Veg" %>
-        <ul>
-            <li><label>Name: </label><label><%= currentFood.name %></label></li>
-            <li><label>Price: </label><label><%= currentFood.price %></label></li>
-            <li><label>Type: </label><label><%= FoodType %></label></li>
-        </ul>
-        <!-- <a href="#" class="add-to-cart">Add to cart</a> -->
-        <form action="/add-to-cart" method="POST">
-            <button type="submit">Add to Cart</button>
-            <input type="number" name="quantity" min="1" value="0" style="width: 30px;"></input>
-            <input name="name" value=<%=currentFood.name%> style="display: none"></input>
-        </form>
+    <div class="navbar">
+        <span>What do you want to eat ?</span>
+    </div>
+    <div class="card-parent">
+        <% foodList.forEach(currentFood => { %>
+            <% let FoodType = "Non-Veg" %>
+            <% if(currentFood.type == 0) FoodType="Veg" %>
+            <div class="card">
+                <table style="width:100%">
+                    <tr>
+                        <td><label>Name</label></td>
+                        <td><label><%= currentFood.name %></label></td>
+                    </tr>
+                    <tr>
+                        <td><label>Price</label></td>
+                        <td><label>₹ <%= currentFood.price %></label></td>
+                    </tr>
+                    <tr>
+                        <td><label>Type</label></td>
+                        <td><label><%= FoodType %></label></td>
+                    </tr>
+                </table>
+                    <form action="/add-to-cart" method="POST">
+                        <button type="submit" class="btn" id="add-to-cart">Add to Cart</button>
+                        <input type="number" name="quantity" min="1" value="0" style="width: 30px;"></input>
+                        <input name="name" value=<%=currentFood.name%> style="display: none"></input>
+                    </form>
+            </div>
 
-    <% }); %>
+        <% }); %>
+    </div>
 </body>
 </html>
