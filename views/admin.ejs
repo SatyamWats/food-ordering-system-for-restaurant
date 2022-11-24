@@ -4,23 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Oriya&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/admin.css">
+    <title>Admin Page</title>
 </head>
 <body>
-    <h1>Admin page</h1>
+    <div class="navbar">
+        <span>Admin Page</span>
+    </div>
     <h3><%= errorMessage %></h3>
-    <% orderList.forEach(currentOrder => { %>
-        <div>
-            <p>ID: <%= currentOrder._id %></p>
-            <% currentOrder.foods.forEach(currentFoodItem => { %>
-                <p>Name: <%= currentFoodItem.name %></p>
-                <p>Quantity: <%= currentFoodItem.quantity   %></p>
-            <% }); %>
-            <form action="/delivered" method="POST">
-                <button type="submit">Delivered</button>
-                <input name="customerID" value=<%=currentOrder._id%> style="display: none"></input>
-            </form>
-        </div>
-    <% }); %>
+    <div class="card-parent">
+        <% orderList.forEach(currentOrder => { %>
+            <div class="card">
+                <span>ID: <%= currentOrder._id %></span>
+                <table>
+                <% currentOrder.foods.forEach(currentFoodItem => { %>
+                        <tr>
+                            <td>Food </td>
+                            <td><%= currentFoodItem.name %></td>
+                        </tr>
+                        <tr>
+                            <td>Quantity </td>
+                            <td><%= currentFoodItem.quantity   %></td>
+                        </tr>
+                <% }); %>
+            </table>
+                <form action="/delivered" method="POST">
+                    <button type="submit" class="btn">Delivered</button>
+                    <input name="customerID" value=<%=currentOrder._id%> style="display: none"></input>
+                </form>
+            </div>
+        <% }); %>
+    </div>
 </body>
 </html>
