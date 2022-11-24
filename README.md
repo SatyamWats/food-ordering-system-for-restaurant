@@ -1,3 +1,3 @@
-# restaurant-ordering-system
+# food-ordering-system-for-restaurant
 
 
