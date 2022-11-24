@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client</title>
+    <link rel="stylesheet" href="/css/client.css">
+    <title>Table Verification</title>
 </head>
 <body>
-    <form action="/auth_table" method="POST">
-        <input type="text" placeholder="Table ID" name="tableID">
-        <button type="submit">Submit</button>
-    </form>
+    <div>
+        <h1>Verify Table</h1>
+        <div class="box">
+            <form action="/auth_table" method="POST">
+                <input type="text" placeholder="Table ID" name="tableID"><br><br>
+                <button type="submit">Verify</button>
+            </form>
+        </div>
+    </div>
 
     <h1><%=errorMessage%></h1>
 </body>
