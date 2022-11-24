@@ -1,0 +1,97 @@
+body{
+    margin: 0;
+}
+
+html {
+    background-color: #E4E9FD;
+    background-image: -webkit-linear-gradient(65deg, #e3a583 40%, #e7ec9e 55%);
+    min-height: 100%;
+}
+
+.navbar{
+    /* background-image: -webkit-linear-gradient(#e3a583 , #e7ec9e ); */
+    background-color: #E5D9B6;
+    box-shadow: 0px 5px 20px rgb(198, 143, 76);
+    width: 100%;
+    height: 70px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.navbar>:first-child{
+    /* background-color: red; */
+    display: inline-block;
+    margin-top: 17px;
+    color: #4d497f;
+    font-family: 'Ultra', serif;
+    margin-left: 60px;
+}
+
+
+#checkout{
+    float: right;
+    margin-top: 7px;
+    margin-right: 7px;
+}
+
+.btn{
+    background-color: #7743DB;
+    border-style: none;
+    border-radius: 10px;
+    padding: 8px;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    transition-duration: 0.4s;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.btn:hover{
+    background-color: #9380b6;
+}
+
+.btn:hover,.btn:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.2em);
+}
+
+
+.card-parent{
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: red; */
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 500px) { 
+    .card-parent{
+        background-color: white;
+    }
+}
+
+.card{
+    background-color: #B9E0FF;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border-radius: 2rem;
+    width: 7rem;
+    height: 7rem;
+    text-align: center;
+    padding: 3rem;
+    box-shadow: 10px 10px 10px #ad7a50;
+}
+
+table{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+td{
+    height: 40px;
+    font-family: 'Noto Serif Oriya', serif;
+}

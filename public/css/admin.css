@@ -1,0 +1,117 @@
+body{
+    margin: 0;
+}
+
+html {
+    background-color: #E4E9FD;
+    background-image: -webkit-linear-gradient(65deg, #86b0ef 40%, #FFF7E9 55%);
+    min-height: 100%;
+}
+
+#cart{
+    float: right;
+    margin-top: 7px;
+    margin-right: 7px;
+}
+
+.btn{
+    background-color: #7743DB;
+    border-style: none;
+    border-radius: 10px;
+    padding: 8px;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    transition-duration: 0.4s;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.btn:hover{
+    background-color: #9380b6;
+}
+
+.btn:hover,.btn:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.2em);
+}
+
+.card-parent{
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: red; */
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 500px) { 
+    .card-parent{
+        background-color: white;
+    }
+}
+
+.card{
+    background-color: #B9E0FF;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2rem;
+    width: 20%;
+    text-align: center;
+    padding: 3rem;
+    box-shadow: 10px 10px 10px #ad7a50;
+}
+
+.navbar{
+    /* background-image: -webkit-linear-gradient(#e3a583 , #e7ec9e ); */
+    background-color: #def0fd;
+    box-shadow: 0px 5px 20px #7fa1b9;
+    width: 100%;
+    height: 70px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.navbar>:first-child{
+    /* background-color: red; */
+    display: inline-block;
+    margin-top: 17px;
+    color: #3a2fa4;
+    font-weight: bolder;
+    font-family: serif;
+    margin-left: 60px;
+}
+
+table{
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #C8FFD4;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-collapse: collapse;
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+
+td{
+    height: 40px;
+    /* border-top: 1px solid ;
+    border-left: 1px solid ; */
+    font-family: 'Noto Serif Oriya', serif;
+    padding: 5px;
+    width: 100px;
+}
+
+
+td:nth-child(2n+1){
+    /* border-top: 1px solid; */
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    border-right: 1px solid;
+}
+
+td:nth-child(2n){
+    border-bottom: 1px solid;
+}
