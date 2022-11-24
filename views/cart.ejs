@@ -5,17 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/cart.css">
 </head>
 <body>
-    <p><%= errorMessage %></p>
-    <% cartList.forEach(currentCartItem => { %>
-        <ul>
-            <li><label>Name: </label><label><%= currentCartItem.name %></label></li>
-            <li><label>Quantity: </label><label><%= currentCartItem.quantity %></label></li>
-        </ul>
-    <% }); %>
     <form action="/checkout" method="post">
-        <button type="submit">Checkout</button>
+        <button type="submit" class="btn" id="checkout">Checkout</button>
     </form>
+    <div class="navbar">
+        <span>Order Now</span>
+    </div>
+    <div class="card-parent">
+        <% cartList.forEach(currentCartItem => { %>
+            <div class="card">
+                <table>
+                    <tr>
+                        <td><label>Name </label></td>
+                        <td><label><%= currentCartItem.name %></label></td>
+                    </tr>
+                    <tr>
+                        <td><label>Quantity </label></td>
+                        <td><label><%= currentCartItem.quantity %></label></td>
+                    </tr>
+                </table>
+            </div>
+        <% }); %>
+    </div>
+    <p><%= errorMessage %></p>
 </body>
 </html>
